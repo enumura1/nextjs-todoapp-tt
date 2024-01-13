@@ -1,0 +1,26 @@
+.todoList {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ulstyle {
+  padding: 0;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listElementStyle {
+  width: 95%;
+  padding: 2% 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid rgb(107, 120, 167);
+  background-color: aliceblue;
+  box-shadow: 2px 2px 8px 0.1px rgba(0, 0, 0, 0);
+  font-size: 1.2rem;
+}
