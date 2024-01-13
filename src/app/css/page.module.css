@@ -14,7 +14,7 @@
 }
 
 .taskListStyle {
-  height: 30vh;
+  height: 50vh;
   width: 50%;
   display: flex;
   flex-direction: column;
