@@ -18,7 +18,6 @@ interface AddTaskProps {
 const AddTask = ({ updateTodoLists }: AddTaskProps) => {
 
   const [title, setTitle] =useState<string>('');
-
   const clickedAddBtn = async (e:any) => {
 
     if (title === ''){
