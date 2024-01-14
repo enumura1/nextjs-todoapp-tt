@@ -9,6 +9,7 @@
   padding: 0;
   width: 95%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -16,6 +17,7 @@
 .listElementStyle {
   width: 95%;
   padding: 2% 2%;
+  margin-bottom: 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
