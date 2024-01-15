@@ -40,7 +40,7 @@ export default function Home() {
       <h1 className={styles.titleText}>タイトル</h1>
       <div className={styles.taskListStyle}>
         <AddTask updateTodoLists={updateTodoLists}/>
-        <TodoList todoLists={todoLists} />
+        <TodoList todoLists={todoLists} setTodoLists={setTodoLists}/>
       </div>
     </main>
   );

@@ -6,16 +6,22 @@ import styles from '../css/todo.module.css';
 
 // 外部関数のインポート
 import { deleteTask } from '../utils/supbaseFunctions';
+import { fetchTodoLists
+ } from '../utils/supbaseFunctions';
 
 // todoListsの型を指定
 interface TodoListProps {
-  todoLists: any[]; // 実際の型に合わせて修正してください
+  todoLists: any[]; 
+  setTodoLists: React.Dispatch<any>;
 }
 
-const TodoList = ({ todoLists }: TodoListProps) => {
+const TodoList = (props: TodoListProps) => {
+  const { todoLists,setTodoLists } = props;
 
   const clickedDeleteBtn =async (taskId:number) => {
     await deleteTask(taskId);
+    const todoLists = await fetchTodoLists();
+    setTodoLists(todoLists);
   }
 
   return (
