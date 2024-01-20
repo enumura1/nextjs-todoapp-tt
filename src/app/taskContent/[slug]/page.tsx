@@ -21,11 +21,29 @@
 // クライアント側で実行
 "use client"
 
+// 外部関数のインポート
+import { updateDesc } from "@/app/utils/supbaseFunctions";
+import { useState } from "react";
 
-export default function Page({ params }: { params: { slug: string } }) {
-  console.log('params '+params.slug)
+export default function Page({ params }: { params: { slug: number } }) {
+  console.log('params: '+ params.slug)
+
+
+  const [generatedText, setgeneratedText] = useState('ー');
+  const topicId: number = params.slug;
+
+  // テキスト更新
+  const handleDescription = async() => {
+    updateDesc(topicId, generatedText);
+    setgeneratedText('意味のない文章。意味のない文章。意味のない文章。意味のない文章。意味のない文章。')
+    alert('登録完了しました')
+  }
 
   return (
-    <h1>My Page</h1>
+    <>
+      <h1>トピック：{topicId}</h1>
+      <p>{generatedText}</p>
+      <button onClick={() => handleDescription()}>登録</button>
+    </>
   );
 }
