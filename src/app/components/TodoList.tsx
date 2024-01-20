@@ -1,10 +1,13 @@
 // クライアント側で実行
 "use client"
 
+
+
 // 外部ファイルのインポート
 import styles from '../css/todo.module.css';
 
 // 外部関数のインポート
+import Link from 'next/link'
 import { deleteTask } from '../utils/supbaseFunctions';
 import { fetchTodoLists
  } from '../utils/supbaseFunctions';
@@ -33,13 +36,25 @@ const TodoList = (props: TodoListProps) => {
           <li
             key={todotask.id} 
             className={styles.listElementStyle}>
-            <p>{todotask.title}</p>
+              {/* <Link href={{
+                      pathname: '/taskContent',
+                      query: { title: todotask.title }}}>
+                <p>{todotask.title}</p>
+              <Link href="/taskContent"></Link> */}
+              {/* <Link href={"/taskContent"} key={1}>
+                <p>{todotask.title}</p>
+              </Link> */}
+
+              <Link href={`/taskContent/${todotask.id}`}>
+                <p>{todotask.title}</p>
+              </Link>
             <div>
+              
               <button className="text-blue-300 mr-4">編集</button>
               <button className="text-red-300" onClick={() => clickedDeleteBtn(todotask.id)}>削除</button>
             </div>
           </li>
-        ))};
+        ))}
       </ul>
     </div>
   )
